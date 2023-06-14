@@ -1,0 +1,63 @@
+package bai07_trang26;
+
+import bai07_trang26.SoftwareHouse.eLoaiNV;
+
+public class Demo {
+	public static void main(String[] args) {
+		SoftwareHouse house = new SoftwareHouse("IUH House");
+		
+		Programmer emp_pro1 = new Programmer(10010, "Trung", 22000000, "C#");
+		Programmer emp_pro2 = new Programmer(10020, "Tin", 15500000, "Angula");
+		Programmer emp_pro3 = new Programmer(10030, "Luan", 27900000, "Java");
+		
+		ProjectLeader emp_lea1 = new ProjectLeader(20010, "Han", 31250000, "C#");
+		ProjectLeader emp_lea2 = new ProjectLeader(20020, "Duong", 15650000, "Java");
+		ProjectLeader emp_lea3 = new ProjectLeader(20030, "Bao", 19350000, "Angula");
+		
+		Administrator emp_ad1 = new Administrator(30010, "Loan", 13400000, "Product Development");
+		Administrator emp_ad2 = new Administrator(30020, "Bich", 13400000, "Human Resource");
+		Administrator emp_ad3 = new Administrator(30030, "Hau", 13400000, "Human Resource");
+		
+		house.addStaff(emp_pro1);
+		house.addStaff(emp_pro2);
+		house.addStaff(emp_pro3);
+		house.addStaff(emp_lea1);
+		house.addStaff(emp_lea2);
+		house.addStaff(emp_lea3);
+		house.addStaff(emp_ad1);
+		house.addStaff(emp_ad2);
+		house.addStaff(emp_ad3);
+		
+		System.out.println("\n-- Xuất tất cả --");
+		house.displayAllStaff(eLoaiNV.ALL);
+		
+		System.out.println("\n-- Xuất Programmer --");
+		house.displayAllStaff(eLoaiNV.Programmer);
+	
+		System.out.println("\n-- Xuất Project Leader --");
+		house.displayAllStaff(eLoaiNV.ProjectLeader);
+		
+		System.out.println("\n-- Xuất Administrator --");
+		house.displayAllStaff(eLoaiNV.Administrator);
+		
+		house.getMonthlySalaryBill(eLoaiNV.ALL);
+		house.getMonthlySalaryBill(eLoaiNV.Programmer);
+		house.getMonthlySalaryBill(eLoaiNV.ProjectLeader);
+		house.getMonthlySalaryBill(eLoaiNV.Administrator);
+		
+		System.out.println("\n-- Sắp xếp theo tên --");
+		house.sortAllStaffByName();
+		house.displayAllStaff(eLoaiNV.ALL);
+		
+		System.out.println("\n");
+		house.updateDepartmentForAdmin(10010, "Sales");
+		house.updateDepartmentForAdmin(30010, "Sales");
+		
+		System.out.println("-- Xuất Administrator --");
+		house.displayAllStaff(eLoaiNV.Administrator);
+		
+		System.out.println("\n");
+		house.deleteEmployee(10010);
+		house.displayAllStaff(eLoaiNV.Programmer);
+	}
+}

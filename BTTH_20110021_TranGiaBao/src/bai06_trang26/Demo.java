@@ -1,0 +1,60 @@
+package bai06_trang26;
+
+import bai06_trang26.PhongHoc.eDayNha;
+import bai06_trang26.QuanLyPhong.eLoaiPhong;
+import bai06_trang26.QuanLyPhong.eTieuChi;
+
+public class Demo {
+	public static void main(String[] args) {
+		QuanLyPhong qLPhong = new QuanLyPhong();
+		
+		PhongLyThuyet phongLT1 = new PhongLyThuyet("8.01", eDayNha.V, 60, 5, false);
+		PhongLyThuyet phongLT2 = new PhongLyThuyet("8.02", eDayNha.V, 70, 10, true);
+		PhongLyThuyet phongLT3 = new PhongLyThuyet("8.03", eDayNha.V, 90, 15, true);
+		
+		PhongMayTinh phongMT1 = new PhongMayTinh("7.01", eDayNha.H, 48, 6, 30);
+		PhongMayTinh phongMT2 = new PhongMayTinh("7.02", eDayNha.H, 48, 9, 30);
+		PhongMayTinh phongMT3 = new PhongMayTinh("7.03", eDayNha.H, 48, 4, 30);
+		
+		PhongThiNghiem phongTN1 = new PhongThiNghiem("1.01", eDayNha.F, 55, 8, "Hóa Phân Tích", 30, false);
+		PhongThiNghiem phongTN2 = new PhongThiNghiem("1.02", eDayNha.F, 52, 7, "Hóa Vô Cơ", 30, true);
+		PhongThiNghiem phongTN3 = new PhongThiNghiem("1.03", eDayNha.F, 30, 3, "Sinh Học Thực Phẩm", 25, true);
+		
+		qLPhong.themPhong(phongLT1);
+		qLPhong.themPhong(phongLT2);
+		qLPhong.themPhong(phongLT3);
+		qLPhong.themPhong(phongMT1);
+		qLPhong.themPhong(phongMT2);
+		qLPhong.themPhong(phongMT3);
+		qLPhong.themPhong(phongTN1);
+		qLPhong.themPhong(phongTN2);
+		qLPhong.themPhong(phongTN3);
+		
+		qLPhong.timKiemPhong("8.01");
+		
+		System.out.println("\n--Xuất phòng lý thuyết--");
+		qLPhong.xuatThongTinPhong(eLoaiPhong.PhongLyThuyet);
+		System.out.println("\n--Xuất phòng máy tính--");
+		qLPhong.xuatThongTinPhong(eLoaiPhong.PhongMayTinh);
+		System.out.println("\n--Xuất phòng thí nghiệm--");
+		qLPhong.xuatThongTinPhong(eLoaiPhong.PhongThiNghiem);
+		
+		System.out.println("\n--Sắp xếp theo diện tích--");
+		qLPhong.sapXepDanhSach(eTieuChi.DienTich);
+		qLPhong.xuatThongTinPhong(eLoaiPhong.ALL);
+		
+		System.out.println("\n--Cập nhật số lượng máy tính--");
+		qLPhong.capNhatSoMayTinh("7.02", 25);
+		
+		System.out.println("\n--Xuất thông tin các phòng có số lượng máy tính >= 25--");
+		qLPhong.xuatSLPhongMayTinh(25);
+		
+		System.out.println("\n--Tổng số phòng học--");
+		qLPhong.tongSoPhongHoc();
+		
+		System.out.println("\n--Xóa phòng học lý thuyết 8.03--");
+		qLPhong.xoaPhongHoc("8.03");
+		System.out.println("\n--Xuất phòng lý thuyết--");
+		qLPhong.xuatThongTinPhong(eLoaiPhong.PhongLyThuyet);
+	}
+}

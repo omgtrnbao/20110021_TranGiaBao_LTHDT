@@ -1,0 +1,37 @@
+package bai02_trang17;
+import java.time.LocalDate;
+
+import bai02_trang17.QuanLySach.eLoaiSach;
+import bai02_trang17.SachGiaoKhoa.eTinhTrang;
+
+public class Demo {
+	public static void main(String[] args) {
+		QuanLySach qLSach = new QuanLySach();
+		
+		SachGiaoKhoa sGK1 = new SachGiaoKhoa("SGK001", LocalDate.of(2022, 10, 13), 150000, 10, "NXB Trẻ" , eTinhTrang.Moi);
+		SachGiaoKhoa sGK2 = new SachGiaoKhoa("SGK002", LocalDate.now(), 276000, 3, "NXB Kim Đồng" , eTinhTrang.Moi);
+		SachGiaoKhoa sGK3 = new SachGiaoKhoa("SGK003", LocalDate.of(2022, 9, 9), 45000, 13, "NXB Văn Học" , eTinhTrang.Cu);
+		qLSach.themSach(sGK1);
+		qLSach.themSach(sGK2);
+		qLSach.themSach(sGK3);
+		
+		SachThamKhao sTK1 = new SachThamKhao("STK010", LocalDate.now(), 77000, 19, "NXB Giáo Dục", 23900);
+		SachThamKhao sTK2 = new SachThamKhao("STK020", LocalDate.now(), 31000, 10, "NXB Giáo Dục", 23900);
+		SachThamKhao sTK3 = new SachThamKhao("STK030", LocalDate.now(), 68000, 15, "NXB Giáo Dục", 23900);
+		qLSach.themSach(sTK1);
+		qLSach.themSach(sTK2);
+		qLSach.themSach(sTK3);
+		
+		qLSach.xuatThongTinSach(eLoaiSach.ALL);
+		qLSach.xuatThongTinSach(eLoaiSach.SGK);
+		qLSach.xuatThongTinSach(eLoaiSach.STK);
+		
+		System.out.println();
+		System.out.println(String.format("%-30s %,.2f", "- Tổng thành tiền:", qLSach.tinhTongThanhTien(eLoaiSach.ALL)));
+		System.out.println(String.format("%-30s %,.2f", "-- Tổng thành tiền theo SGK:", qLSach.tinhTongThanhTien(eLoaiSach.SGK)));
+		System.out.println(String.format("%-30s %,.2f", "-- Tổng thành tiền theo STK:", qLSach.tinhTongThanhTien(eLoaiSach.STK)));
+		
+		System.out.println();
+		System.out.println(String.format("%-30s: %,15.2f", "- Thành tiền cao nhất:", qLSach.timThanhTienCaoNhat()));
+	}
+}

@@ -1,0 +1,32 @@
+package bai07_trang25;
+
+public class Programmer extends Employee{
+	private String theLanguage;
+
+	public Programmer(int thePayrollNumber, String theName, float theBasicMonthlySalary, String theLanguage) {
+		super(thePayrollNumber, theName, theBasicMonthlySalary);
+		this.theLanguage = theLanguage;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("| %20d | %-20s | %30s | %30s | %30s |", getThePayrollNumber(), getTheName(), formatUSD(getTheBasicMonthlySalary())
+				, formatUSD(getMonthlySalary()), getTheLanguage());
+	}
+	
+	public float getMonthlySalary() {
+		float salary = getTheBasicMonthlySalary();
+		
+		if(theLanguage == "Java") salary *= 1.2;
+		
+		return salary;
+	}
+
+	public String getTheLanguage() {
+		return theLanguage;
+	}
+
+	public void setTheLanguage(String theLanguage) {
+		this.theLanguage = theLanguage;
+	}
+}

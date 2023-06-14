@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+D:\IUH\LTHDT_BaiTap\20110021_TranGiaBao_LTHDT\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2830485784.index
+3652839502.index

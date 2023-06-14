@@ -1,0 +1,21 @@
+package bai04_trang6;
+
+public class VehicleDemo {
+	
+	public static void main(String[] args) {
+		
+		Vehicle xe1 = new Vehicle("Tran Gia Bao", "Honda Lead", 125, 32000000);
+		
+		Vehicle xe2 = new Vehicle("Nguyen T. Thanh Ngan", "Honda Wave", 90, 25000000);
+		
+		Vehicle xe3 = new Vehicle("Tran Thien Bao", "KTM Duke 390", 390, 215000000);
+			
+		System.out.println(String.format("%-20s| %-20s| %12s| %20s| %20s|", "Ten chu xe", "Ten xe", "Dung tich", "Tri gia", "Thue truoc ba"));
+		System.out.println("=====================================================================================================");
+		System.out.println(xe1.toString());
+		System.out.println(xe2.toString());
+		System.out.println(xe3.toString());
+		
+	}
+
+}

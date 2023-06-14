@@ -1,0 +1,23 @@
+package bai07_trang25;
+
+public class ProjectLeader extends Programmer{
+
+	public ProjectLeader(int thePayrollNumber, String theName, float theBasicMonthlySalary, String theLanguage) {
+		super(thePayrollNumber, theName, theBasicMonthlySalary, theLanguage);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public float getMonthlySalary() {
+		float salary = getTheBasicMonthlySalary() * 1.2f;
+		
+		if(getTheLanguage() == "Java") salary *= 1.2f;
+		
+		return salary;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("| %20d | %-20s | %30s | %30s | %30s |", getThePayrollNumber(), getTheName(), formatUSD(getTheBasicMonthlySalary())
+				, formatUSD(getMonthlySalary()), getTheLanguage());
+	}
+}
